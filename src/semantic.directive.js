@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app.infrastructure')
+var $ = require('jquery');
+
+angular.module('angularSemanticUi')
     .directive('semantic', function($timeout, $state) {
 
         return {
@@ -13,7 +15,7 @@ angular.module('app.infrastructure')
                 var options = $scope.semantic,
                     semantic = new Semantic;
 
-                $timeout(() => semantic.initialize($element, $state, options));
+                $timeout(() => semantic.initialize($($element), $state, options));
             }
         };
     });
