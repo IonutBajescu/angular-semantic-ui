@@ -12,7 +12,7 @@ angular.module('angularSemanticUi')
                 ngModel: '='
             },
             link: function($scope, $element, $attrs) {
-                var options = $scope.semantic,
+                var options = $scope.semantic || {},
                     semantic = new Semantic;
 
                 $timeout(() => semantic.initialize($($element), $state, options));

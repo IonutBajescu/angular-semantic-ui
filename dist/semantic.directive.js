@@ -15,7 +15,7 @@ angular.module('angularSemanticUi').directive('semantic', function ($timeout, $s
             ngModel: '='
         },
         link: function link($scope, $element, $attrs) {
-            var options = $scope.semantic,
+            var options = $scope.semantic || {},
                 semantic = new Semantic();
 
             $timeout(function () {
